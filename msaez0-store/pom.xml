@@ -1,5 +1,5 @@
 forEach: BoundedContext
-path: {{nameCamelCase}}/{{nameCamelCase}}-store/pom.xml
+path: {{nameCamelCase}}/{{nameCamelCase}}-store
 fileName: pom.xml
 ---
 <?xml version="1.0" encoding="utf-8"?>

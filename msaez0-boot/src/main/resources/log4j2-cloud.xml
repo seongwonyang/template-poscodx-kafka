@@ -1,0 +1,31 @@
+forEach: BoundedContext
+path: {{nameCamelCase}}/{{nameCamelCase}}-boot/src/main/resources
+fileName: log4j2-cloud.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>[%-5level] [%T] %d{yyyy-MM-dd HH:mm:ss.SSS} |%X{x-traceId}|%X{x-spanId}|%X{x-transactionCodeOrViewId}|%c - %msg%n</pattern>
+            </PatternLayout>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="WARN">
+            <AppenderRef ref="CONSOLE"/>
+        </Root>
+        <Logger name="com.posco" level="DEBUG" additivity="false">
+            <AppenderRef ref="CONSOLE"/>
+        </Logger>
+        <Logger name="com.poscoict" level="DEBUG" additivity="false">
+            <AppenderRef ref="CONSOLE"/>
+        </Logger>
+        <Logger name="org.apache.kafka" level="INFO" additivity="false">
+            <AppenderRef ref="CONSOLE"/>
+        </Logger>
+        <Logger name="org.springframework" level="INFO" additivity="false">
+            <AppenderRef ref="CONSOLE"/>
+        </Logger>
+    </Loggers>
+</Configuration>

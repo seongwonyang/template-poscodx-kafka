@@ -1,0 +1,18 @@
+forEach: BoundedContext
+path: {{nameCamelCase}}/{{nameCamelCase}}-store/
+fileName: .gitignore
+---
+**/.metadata/
+**/.recommenders/
+**/target
+**/.settings
+**/build
+**/.classpath
+**/.iml
+.idea
+**/.project
+
+**/bin
+*.iml
+target/
+*-boot/src/main/resources/application*.yml

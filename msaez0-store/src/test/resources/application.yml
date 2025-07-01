@@ -1,0 +1,10 @@
+forEach: BoundedContext
+path: {{nameCamelCase}}/{{nameCamelCase}}-store/src/test/resources/application.yml
+fileName: application.yml
+---
+spring:
+  datasource:
+    url: jdbc:postgresql://10.125.2.121:5432/jiradb
+    username: jirauser
+    password: jira12#
+    driver-class-name: org.postgresql.Driver

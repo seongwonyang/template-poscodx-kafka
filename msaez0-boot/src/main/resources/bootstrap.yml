@@ -1,0 +1,14 @@
+forEach: BoundedContext
+path: {{nameCamelCase}}/{{nameCamelCase}}-boot/src/main/resources
+fileName: bootstrap.yml
+---
+spring:
+  cloud:
+    config:
+      uri: ${bootstrap-config.uri}
+  application:
+    name: {{nameCamelCase}}-kafka
+  profiles:
+    active: local
+bootstrap-config:
+  uri: http://pit01u-config:8080/pit01u-config

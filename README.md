@@ -1,5 +1,5 @@
 forEach: BoundedContext
-path: {{nameCamelCase}}/{{nameCamelCase}}-store/
+path: {{nameCamelCase}}
 fileName: README.md
 ---
 # msaez0-kafka

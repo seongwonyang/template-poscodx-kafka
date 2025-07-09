@@ -2,7 +2,7 @@ forEach: BoundedContext
 path: {{nameCamelCase}}/{{nameCamelCase}}-boot/src/main/java/com/posco/sample/{{nameCamelCase}}
 fileName: KafkaApplication.java
 ---
-package com.poscodx.sample.{nameCamelCase};
+package com.poscodx.sample.{{nameCamelCase}};
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,15 +24,15 @@ import org.springframework.web.bind.annotation.RestController;
  * 
  */
 @SpringBootApplication(scanBasePackages = {
-    "com.poscodx.sample.{nameCamelCase}",
+    "com.poscodx.sample.{{nameCamelCase}}",
     "com.poscodx.reuse.common.util.kafka"
 })
 @EntityScan(basePackages = {
-    "com.poscodx.sample.{nameCamelCase}",
+    "com.poscodx.sample.{{nameCamelCase}}",
     "com.poscodx.reuse.common.util.kafka.db"
 })
 @EnableJpaRepositories(basePackages = {
-    "com.poscodx.sample.{nameCamelCase}",
+    "com.poscodx.sample.{{nameCamelCase}}",
     "com.poscodx.reuse.common.util.kafka.db"
 })
 @RestController

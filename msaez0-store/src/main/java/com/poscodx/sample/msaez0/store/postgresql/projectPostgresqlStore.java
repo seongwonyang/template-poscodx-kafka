@@ -9,7 +9,7 @@ import java.util.Optional;
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.postgresql.jpo.{{namePascalCase}}Jpo;
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.postgresql.repository.{{namePascalCase}}PostgresqlRepository;
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.projectStore;
+import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.{{namePascalCase}}Store;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;

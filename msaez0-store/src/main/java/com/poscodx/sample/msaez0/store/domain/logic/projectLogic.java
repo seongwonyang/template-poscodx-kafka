@@ -7,7 +7,7 @@ package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.logic;
 import java.util.List;
 import com.poscodx.base.share.domain.NameValueList;
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.projectStore;
+import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.{{namePascalCase}}Store;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

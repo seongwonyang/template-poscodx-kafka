@@ -25,9 +25,9 @@ public interface {{namePascalCase}}Store {
 
     void delete(Integer id);
 
-    project retrieve(Integer id);
+    {{namePascalCase}} retrieve(Integer id);
 
-    project update(project entity);
+    {{namePascalCase}} update({{namePascalCase}} entity);
 
-    project create(project entity);
+    {{namePascalCase}} create({{namePascalCase}} entity);
 }

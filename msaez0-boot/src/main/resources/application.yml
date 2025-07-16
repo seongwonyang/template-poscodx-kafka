@@ -1,0 +1,51 @@
+forEach: BoundedContext
+path: {{nameCamelCase}}/{{nameCamelCase}}-boot/src/main/resources
+fileName: application.yml
+---
+server:
+  servlet:
+    context-path: /{{nameCamelCase}}-kafka
+spring:
+  datasource:
+    url: ${datasource.url}
+    username: ${datasource.username}
+    password: ${datasource.password}
+    driver-class-name: ${datasource.driver-class-name}
+    hikari:
+      maximum-pool-size: ${datasource.hikari.maximum-pool-size}
+      minimum-idle: ${datasource.hikari.minimum-idle}
+  mvc:
+    converters:
+      preferred-json-mapper: gson
+  cloud:
+    stream:
+      default:
+        group: ${spring.application.name}
+      kafka:
+        binder:
+          brokers: ${kafka.brokers}
+          zkNodes: ${kafka.zkNodes}
+        default:
+          consumer:
+            ackMode: RECORD
+      function:
+        definition: topic_channel
+      bindings:
+        default:
+          consumer:
+            enableDlq: true
+            maxAttempts: 2147483647
+        topic_channel-in-0:
+          destination: topicname
+          consumer:
+            maxAttempts: 1
+poscoict:
+  reuse:
+    offset-n-skip:
+      jdbcUrl: ${reuse.datasource.url}
+      username: ${reuse.datasource.username}
+      password: ${reuse.datasource.password}
+      driverClassName: ${datasource.driver-class-name}
+      hikari:
+        maximum-pool-size: ${datasource.hikari.maximum-pool-size}
+        minimum-idle: ${datasource.hikari.minimum-idle}

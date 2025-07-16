@@ -1,0 +1,24 @@
+forEach: BoundedContext
+path: {{nameCamelCase}}/{{nameCamelCase}}-boot/src/main/resources
+fileName: application-local.yml
+---
+server:
+  port: 8088
+datasource:
+  url: jdbc:postgresql://10.125.2.121:5432/jiradb
+  username: jirauser
+  password: jira12#
+  driver-class-name: org.postgresql.Driver
+  hikari:
+    maximum-pool-size: 3
+    minimum-idle: 1
+logging:
+  config: classpath:log4j2-local.xml
+kafka:
+  brokers: 10.124.3.26:9092
+  zkNodes: 10.124.3.26:2181
+reuse:
+  datasource:
+    url: jdbc:edb://10.124.3.149:5432/D_FL_LOGIS
+    username: fl_pit11b_rw
+    password: tfpit11b

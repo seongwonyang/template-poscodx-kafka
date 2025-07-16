@@ -5,6 +5,13 @@ fileName: {{namePascalCase}}Resource.java
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.facade.rest.feature;
 
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.feature.action.{{namePascalCase}}Action;
+{{#commands}}
+import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
+{{/commands}}
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,5 +56,19 @@ public class {{namePascalCase}}Resource {
         return messageSource.getMessage("SOME_MESSAGE_ID", args, locale);
     } 
     */ 
+
+    {{#commands}}
+    {{#if ^isRestRepository}}
+    public void {{nameCamelCase}}(
+        @RequestBody {{namePascalCase}}Dto {{nameCamelCase}}Dto) {
+        {{../namePascalCase}} {{../nameCamelCase}} = {{../nameCamelCase}}Service.findById({{../keyFieldDescriptor.nameCamelCase}});
+        
+        // 도메인 포트 메서드 직접 호출
+        {{../nameCamelCase}}Action.{{nameCamelCase}}({{nameCamelCase}}Dto);
+        
+        return ResponseEntity.ok({{../nameCamelCase}}Service.save({{../nameCamelCase}}));
+    }
+    {{/if}}
+    {{/commands}}
 
 }

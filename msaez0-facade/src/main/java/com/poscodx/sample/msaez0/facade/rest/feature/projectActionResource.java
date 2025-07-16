@@ -58,7 +58,8 @@ public class {{namePascalCase}}Resource {
     */ 
 
     {{#commands}}
-    {{#^isRestRepository}}
+    {{#if isRestRepository}}
+    {{else}}
     public void {{nameCamelCase}}(
         @RequestBody {{namePascalCase}}Dto {{nameCamelCase}}Dto) {
         {{../namePascalCase}} {{../nameCamelCase}} = {{../nameCamelCase}}Service.findById({{../keyFieldDescriptor.nameCamelCase}});
@@ -68,7 +69,7 @@ public class {{namePascalCase}}Resource {
         
         return ResponseEntity.ok({{../nameCamelCase}}Service.save({{../nameCamelCase}}));
     }
-    {{/isRestRepository}}
+    {{/if}}
     {{/commands}}
 
 }

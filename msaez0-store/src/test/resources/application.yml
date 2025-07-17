@@ -1,5 +1,5 @@
 forEach: BoundedContext
-path: {{nameCamelCase}}/{{nameCamelCase}}-store/src/test/resources/application.yml
+path: {{nameCamelCase}}/{{nameCamelCase}}-store/src/test/resources
 fileName: application.yml
 ---
 spring:

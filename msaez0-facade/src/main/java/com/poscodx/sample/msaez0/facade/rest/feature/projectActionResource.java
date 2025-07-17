@@ -10,7 +10,7 @@ import com.poscodx.sample.{{boundedContext.nameCamelCase}}.feature.action.{{name
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
 {{/commands}}
 {{#attached 'View' this}}
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}};
+import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
 {{/attached}}
 
 

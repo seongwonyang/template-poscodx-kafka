@@ -50,4 +50,12 @@ public class {{namePascalCase}}Flow {
     } 
     */ 
 
+    {{#commands}}
+    {{#if isRestRepository}}
+    {{else}}
+    public void {{nameCamelCase}}({{namePascalCase}}Dto {{nameCamelCase}}Dto) {
+        action.someMethod();
+    }
+    {{/if}}
+    {{/commands}}
 }

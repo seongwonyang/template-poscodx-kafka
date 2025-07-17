@@ -1,6 +1,6 @@
 forEach: Aggregate
 path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/facade/rest/feature
-fileName: {{namePascalCase}}Resource.java
+fileName: {{namePascalCase}}ActionResource.java
 ---
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.facade.rest.feature;
 
@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(path = "/{{nameCamelCase}}-action")
-public class {{namePascalCase}}Resource {
+public class {{namePascalCase}}ActionResource {
     private final {{namePascalCase}}Action action;
     
     /* 
@@ -60,14 +60,9 @@ public class {{namePascalCase}}Resource {
     {{#commands}}
     {{#if isRestRepository}}
     {{else}}
-    public void {{nameCamelCase}}(
-        @RequestBody {{namePascalCase}}Dto {{nameCamelCase}}Dto) {
-        {{../namePascalCase}} {{../nameCamelCase}} = {{../nameCamelCase}}Service.findById({{../keyFieldDescriptor.nameCamelCase}});
-        
-        // 도메인 포트 메서드 직접 호출
-        {{../nameCamelCase}}Action.{{nameCamelCase}}({{nameCamelCase}}Dto);
-        
-        return ResponseEntity.ok({{../nameCamelCase}}Service.save({{../nameCamelCase}}));
+    @GetMapping("/{{nameCamelCase}}")
+    public void {{nameCamelCase}}({{namePascalCase}}Dto {{nameCamelCase}}Dto) {
+        action.someMethod();
     }
     {{/if}}
     {{/commands}}

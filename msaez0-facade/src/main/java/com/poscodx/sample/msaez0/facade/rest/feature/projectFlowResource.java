@@ -1,8 +1,12 @@
 forEach: Aggregate
 path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/facade/rest/feature
-fileName: {{namePascalCase}}Resource.java
+fileName: {{namePascalCase}}FlowResource.java
 ---
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.facade.rest.feature;
+
+{{#commands}}
+import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
+{{/commands}}
 
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.feature.flow.{{namePascalCase}}Flow;
 import lombok.RequiredArgsConstructor;
@@ -49,5 +53,15 @@ public class {{namePascalCase}}FlowResource {
         return messageSource.getMessage("SOME_MESSAGE_ID", args, locale);
     } 
     */ 
+
+    {{#commands}}
+    {{#if isRestRepository}}
+    {{else}}
+    @GetMapping("/{{nameCamelCase}}")
+    public void {{nameCamelCase}}({{namePascalCase}}Dto {{nameCamelCase}}Dto) {
+        flow.someMethod();
+    }
+    {{/if}}
+    {{/commands}}
 
 }

@@ -12,6 +12,7 @@ import com.poscodx.sample.{{boundedContext.nameCamelCase}}.feature.flow.{{namePa
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -58,7 +59,7 @@ public class {{namePascalCase}}FlowResource {
     {{#if isRestRepository}}
     {{else}}
     @GetMapping("/{{nameCamelCase}}")
-    public void {{nameCamelCase}}({{namePascalCase}}Dto {{nameCamelCase}}Dto) {
+    public void {{nameCamelCase}}(@RequestBody {{namePascalCase}}Dto {{nameCamelCase}}Dto) {
         flow.someMethod();
     }
     {{/if}}

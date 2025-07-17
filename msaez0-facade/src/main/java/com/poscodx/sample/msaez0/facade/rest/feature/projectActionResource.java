@@ -69,4 +69,11 @@ public class {{namePascalCase}}ActionResource {
     {{/if}}
     {{/commands}}
 
+    {{#attached 'View' this}}
+    @GetMapping("/{{nameCamelCase}}")
+    public void {{../nameCamelCase}}(@RequestBody {{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
+        action.someMethod();
+    }
+    {{/views}}
+
 }

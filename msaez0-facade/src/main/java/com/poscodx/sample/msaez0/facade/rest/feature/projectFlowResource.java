@@ -4,6 +4,7 @@ fileName: {{namePascalCase}}FlowResource.java
 ---
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.facade.rest.feature;
 
+import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
 {{#commands}}
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
 {{/commands}}
@@ -72,7 +73,7 @@ public class {{namePascalCase}}FlowResource {
     // view
     {{#attached 'View' this}}
     @GetMapping("/{{nameCamelCase}}")
-    public {{../namePascalCase}} {{nameCamelCase}}(@RequestBody {{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
+    public {{../namePascalCase}} {{nameCamelCase}}(@RequestBody {{namePascalCase}}Dto {{nameCamelCase}}Dto) {
         flow.someMethod();
     }
     {{/attached}}

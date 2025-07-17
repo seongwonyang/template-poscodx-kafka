@@ -4,6 +4,7 @@ fileName: {{namePascalCase}}ActionResource.java
 ---
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.facade.rest.feature;
 
+import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.feature.action.{{namePascalCase}}Action;
 {{#commands}}
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
@@ -77,7 +78,7 @@ public class {{namePascalCase}}ActionResource {
     // view
     {{#attached 'View' this}}
     @GetMapping("/{{nameCamelCase}}")
-    public {{../namePascalCase}} {{nameCamelCase}}(@RequestBody {{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
+    public {{../namePascalCase}} {{nameCamelCase}}(@RequestBody {{namePascalCase}}Dto {{nameCamelCase}}Dto) {
         action.someMethod();
     }
     {{/attached}}

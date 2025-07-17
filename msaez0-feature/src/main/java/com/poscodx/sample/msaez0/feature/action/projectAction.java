@@ -4,6 +4,7 @@ fileName: {{namePascalCase}}Action.java
 ---
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.feature.action;
 
+import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.logic.{{namePascalCase}}Logic;
 {{#commands}}
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
@@ -66,7 +67,7 @@ public class {{namePascalCase}}Action {
 
     // view
     {{#attached 'View' this}}
-    public {{../namePascalCase}} {{nameCamelCase}}({{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
+    public {{../namePascalCase}} {{nameCamelCase}}({{namePascalCase}}Dto {{nameCamelCase}}Dto) {
         logic.someMethod();
     }
     {{/attached}}

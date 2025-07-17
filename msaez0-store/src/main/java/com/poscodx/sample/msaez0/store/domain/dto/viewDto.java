@@ -6,12 +6,12 @@ package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto;
 
 public class {{namePascalCase}}Dto {
     
-    {{#fieldDescriptors}}
+    {{#queryParameters}}
     {{#isKey}}
         @Id
     {{/isKey}}
         private {{className}} {{nameCamelCase}};
-    {{/fieldDescriptors}}
+    {{/queryParameters}}
 
 }
 

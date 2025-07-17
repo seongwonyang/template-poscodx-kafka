@@ -77,7 +77,7 @@ public class {{namePascalCase}}ActionResource {
     // view
     {{#attached 'View' this}}
     @GetMapping("/{{nameCamelCase}}")
-    public void {{../nameCamelCase}}(@RequestBody {{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
+    public {{../namePascalCase}} {{nameCamelCase}}(@RequestBody {{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
         action.someMethod();
     }
     {{/attached}}

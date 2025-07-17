@@ -68,7 +68,7 @@ public class {{namePascalCase}}Flow {
 
     // view
     {{#attached 'View' this}}
-    public void {{../nameCamelCase}}({{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
+    public {{../namePascalCase}} {{nameCamelCase}}({{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
         action.someMethod();
     }
     {{/attached}}

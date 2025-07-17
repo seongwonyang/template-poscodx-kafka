@@ -72,7 +72,7 @@ public class {{namePascalCase}}FlowResource {
     // view
     {{#attached 'View' this}}
     @GetMapping("/{{nameCamelCase}}")
-    public void {{../nameCamelCase}}(@RequestBody {{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
+    public {{../namePascalCase}} {{nameCamelCase}}(@RequestBody {{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
         flow.someMethod();
     }
     {{/attached}}

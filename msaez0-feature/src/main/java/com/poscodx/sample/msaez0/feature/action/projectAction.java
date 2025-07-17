@@ -66,7 +66,7 @@ public class {{namePascalCase}}Action {
 
     // view
     {{#attached 'View' this}}
-    public void {{../nameCamelCase}}({{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
+    public {{../namePascalCase}} {{nameCamelCase}}({{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
         logic.someMethod();
     }
     {{/attached}}

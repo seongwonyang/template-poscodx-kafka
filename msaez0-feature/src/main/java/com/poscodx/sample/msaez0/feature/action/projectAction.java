@@ -54,6 +54,7 @@ public class {{namePascalCase}}Action {
     } 
     */ 
 
+    // command
     {{#commands}}
     {{#if isRestRepository}}
     {{else}}
@@ -63,6 +64,7 @@ public class {{namePascalCase}}Action {
     {{/if}}
     {{/commands}}
 
+    // view
     {{#attached 'View' this}}
     public void {{../nameCamelCase}}({{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
         logic.someMethod();

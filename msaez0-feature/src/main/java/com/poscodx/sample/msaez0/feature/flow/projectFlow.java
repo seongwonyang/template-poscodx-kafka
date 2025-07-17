@@ -56,6 +56,7 @@ public class {{namePascalCase}}Flow {
     } 
     */ 
 
+    // command
     {{#commands}}
     {{#if isRestRepository}}
     {{else}}
@@ -65,6 +66,7 @@ public class {{namePascalCase}}Flow {
     {{/if}}
     {{/commands}}
 
+    // view
     {{#attached 'View' this}}
     public void {{../nameCamelCase}}({{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
         action.someMethod();

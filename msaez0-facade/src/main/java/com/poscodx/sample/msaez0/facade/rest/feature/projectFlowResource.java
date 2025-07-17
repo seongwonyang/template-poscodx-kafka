@@ -58,6 +58,7 @@ public class {{namePascalCase}}FlowResource {
     } 
     */ 
 
+    // command
     {{#commands}}
     {{#if isRestRepository}}
     {{else}}
@@ -68,10 +69,11 @@ public class {{namePascalCase}}FlowResource {
     {{/if}}
     {{/commands}}
 
+    // view
     {{#attached 'View' this}}
     @GetMapping("/{{nameCamelCase}}")
     public void {{../nameCamelCase}}(@RequestBody {{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
-        action.someMethod();
+        flow.someMethod();
     }
     {{/attached}}
 

@@ -63,6 +63,7 @@ public class {{namePascalCase}}ActionResource {
     } 
     */ 
 
+    // command
     {{#commands}}
     {{#if isRestRepository}}
     {{else}}
@@ -73,6 +74,7 @@ public class {{namePascalCase}}ActionResource {
     {{/if}}
     {{/commands}}
 
+    // view
     {{#attached 'View' this}}
     @GetMapping("/{{nameCamelCase}}")
     public void {{../nameCamelCase}}(@RequestBody {{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {

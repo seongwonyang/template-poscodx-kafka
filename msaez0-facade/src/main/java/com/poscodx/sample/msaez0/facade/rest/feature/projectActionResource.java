@@ -8,6 +8,10 @@ import com.poscodx.sample.{{boundedContext.nameCamelCase}}.feature.action.{{name
 {{#commands}}
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
 {{/commands}}
+{{#attached 'View' this}}
+import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}};
+{{/attached}}
+
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -74,6 +78,6 @@ public class {{namePascalCase}}ActionResource {
     public void {{../nameCamelCase}}(@RequestBody {{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
         action.someMethod();
     }
-    {{/views}}
+    {{/attached}}
 
 }

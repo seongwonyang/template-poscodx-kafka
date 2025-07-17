@@ -5,6 +5,12 @@ fileName: {{namePascalCase}}Action.java
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.feature.action;
 
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.logic.{{namePascalCase}}Logic;
+{{#commands}}
+import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
+{{/commands}}
+{{#attached 'View' this}}
+import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}};
+{{/attached}}
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -56,5 +62,11 @@ public class {{namePascalCase}}Action {
     }
     {{/if}}
     {{/commands}}
+
+    {{#attached 'View' this}}
+    public void {{../nameCamelCase}}({{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
+        logic.someMethod();
+    }
+    {{/attached}}
 
 }

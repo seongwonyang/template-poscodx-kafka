@@ -7,6 +7,9 @@ package com.poscodx.sample.{{boundedContext.nameCamelCase}}.facade.rest.feature;
 {{#commands}}
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
 {{/commands}}
+{{#attached 'View' this}}
+import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}};
+{{/attached}}
 
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.feature.flow.{{namePascalCase}}Flow;
 import lombok.RequiredArgsConstructor;
@@ -70,6 +73,6 @@ public class {{namePascalCase}}FlowResource {
     public void {{../nameCamelCase}}(@RequestBody {{../namePascalCase}}Dto {{../nameCamelCase}}Dto) {
         action.someMethod();
     }
-    {{/views}}
+    {{/attached}}
 
 }

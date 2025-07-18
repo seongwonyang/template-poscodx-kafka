@@ -19,6 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+// kafka
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.function.StreamBridge;
+import org.springframework.messaging.support.MessageBuilder;
 
 /**
  * Auto generated class
@@ -37,6 +41,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/{{nameCamelCase}}-flow")
 public class {{namePascalCase}}FlowResource {
     private final {{namePascalCase}}Flow flow;
+
+    // kafka
+    @Autowired
+    private StreamBridge streamBridge;
     
     /* 
     // TODO : Biz Logic 구현 
@@ -66,6 +74,11 @@ public class {{namePascalCase}}FlowResource {
     @GetMapping("/{{nameCamelCase}}")
     public void {{nameCamelCase}}(@RequestBody {{namePascalCase}}Dto {{nameCamelCase}}Dto) {
         flow.someMethod();
+
+        {{#outgoing 'Event' this}}
+        streamBridge.send("{{nameCamelCase}}-out-0",
+                MessageBuilder.withPayload(orderJson).build());
+        {{/outgoing}}
     }
     {{/if}}
     {{/commands}}

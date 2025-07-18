@@ -78,6 +78,11 @@ public class {{namePascalCase}}ActionResource {
     @GetMapping("/{{nameCamelCase}}")
     public void {{nameCamelCase}}(@RequestBody {{namePascalCase}}Dto {{nameCamelCase}}Dto) {
         action.someMethod();
+
+        {{#outgoing 'Event' this}}
+        streamBridge.send("{{nameCamelCase}}-out-0",
+                MessageBuilder.withPayload(orderJson).build());
+        {{/outgoing}}
     }
     {{/if}}
     {{/commands}}

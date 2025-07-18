@@ -1,4 +1,4 @@
-forEach: Policy
+forEach: Policy.incomingEventRefs
 path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/facade/event
 fileName: {{nameCamelCase}}Listener.java
 ---
@@ -32,21 +32,10 @@ implements Consumer<Message<String>>
     
     @PosEventHandler
     @Override
-    public void accept(Message<String> message) {
+    public void {{nameCamelCase}}(Message<String> message) {
         String payload = message.getPayload();
         // TODO
         // T obj = JsonUtil.fromJson(payload, T)
         // someFlow.someMethod(obj)
     }
-    
-    {{#incomingEventRefs}}
-    @Bean
-    public Consumer<Message<String>> {{nameCamelCase}}() {
-        return message -> {
-            String payload = message.getPayload();
-        };
-    }
-    {{/incomingEventRefs}}
-    // TODO 
-    // private final SomeFlow someFlow; 
 }

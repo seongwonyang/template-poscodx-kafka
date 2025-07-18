@@ -1,4 +1,4 @@
-forEach: Policy.incomingEventRefs
+forEach: Policy
 path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/facade/event
 fileName: {{nameCamelCase}}Listener.java
 ---

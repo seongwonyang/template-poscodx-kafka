@@ -5,8 +5,8 @@ fileName: {{namePascalCase}}Event.java
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.event;
 
 public class {{namePascalCase}}Event {
-    {{#fieldDefinitions}}
-    private {{type}} {{name}};
-    {{/fieldDefinitions}}
+    {{#fieldDescriptors}}
+    private {{className}} {{nameCamelCase}};
+    {{/fieldDescriptors}}
 }
 

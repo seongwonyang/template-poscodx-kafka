@@ -26,8 +26,8 @@ import org.springframework.stereotype.Component;
 {{#policies}}
 {{#incomingEventRefs}}
 @Slf4j
-@Component("{{nameCamelCase}}")
-public class {{nameCamelCase}}Listener
+@Component("{{this.value.nameCamelCase}}")
+public class {{this.value.nameCamelCase}}Listener
     implements Consumer<Message<String>>
 {
 

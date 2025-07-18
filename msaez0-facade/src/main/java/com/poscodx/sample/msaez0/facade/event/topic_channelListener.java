@@ -1,7 +1,7 @@
 forEach: Event
-path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/facade/event
+path: {{outgoing "Policy" this}}{{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/facade/event{{/outgoing}}
 fileName: {{nameCamelCase}}Listener.java
-except: {{^outgoing "Policy" this}}
+except: {{^outgoing "Policy" this}}{{/outgoing}}
 ---
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.facade.event;
 

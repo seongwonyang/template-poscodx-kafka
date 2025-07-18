@@ -12,6 +12,9 @@ import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{na
 {{#attached 'View' this}}
 import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
 {{/attached}}
+{{#events}}
+import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.event.{{namePascalCase}}Event;
+{{/events}}
 
 
 import org.springframework.http.ResponseEntity;
@@ -81,7 +84,7 @@ public class {{namePascalCase}}ActionResource {
 
         {{#outgoing 'Event' this}}
         streamBridge.send("{{nameCamelCase}}-out-0",
-                MessageBuilder.withPayload({{namePascalCase}}.toJson()).build());
+                MessageBuilder.withPayload({{namePascalCase}}Event.toJson()).build());
         {{/outgoing}}
     }
     {{/if}}

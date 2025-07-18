@@ -1,8 +1,8 @@
-forEach: BoundedContext
-path: {{nameCamelCase}}/{{nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{nameCamelCase}}/facade/event
-fileName: topic_channelListener.java
+forEach: Policy
+path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/facade/event
+fileName: {{nameCamelCase}}Listener.java
 ---
-package com.poscodx.sample.{nameCamelCase}.facade.event;
+package com.poscodx.sample.{{boundedContext.nameCamelCase}}.facade.event;
 
 import java.util.function.Consumer;
 import com.poscodx.reuse.common.util.kafka.annotation.PosEventHandler;
@@ -25,8 +25,8 @@ import org.springframework.stereotype.Component;
 
 
 @Slf4j
-@Component("topic_channel")
-public class topic_channelListener
+@Component("{{nameCamelCase}}_channel")
+public class {{nameCamelCase}}Listener
 implements Consumer<Message<String>>
 {
     
@@ -39,16 +39,14 @@ implements Consumer<Message<String>>
         // someFlow.someMethod(obj)
     }
     
-    {{#policies}}
     {{#incomingEventRefs}}
     @Bean
-    public Consumer<Message<String>> {{this.value.nameCamelCase}}() {
+    public Consumer<Message<String>> {{nameCamelCase}}() {
         return message -> {
             String payload = message.getPayload();
         };
     }
     {{/incomingEventRefs}}
-    {{/policies}}
     // TODO 
     // private final SomeFlow someFlow; 
 }

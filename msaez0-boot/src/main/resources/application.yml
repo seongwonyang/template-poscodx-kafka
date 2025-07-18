@@ -29,7 +29,7 @@ spring:
           consumer:
             ackMode: RECORD
       function:
-        definition: {{#aggregates}}{{#events}}{{nameCamelCase}}{{^last}}, {{/last}}{{/events}}{{/aggregates}}, {{#policies}}{{#incomingEventRefs}}{{nameCamelCase}}{{^last}}, {{/last}}{{/incomingEventRefs}}{{/policies}}
+        definition: {{#aggregates}}{{#events}}{{nameCamelCase}}{{^last}}, {{/last}}{{/events}}{{/aggregates}}, {{#policies}}{{#incomingEventRefs}}{{this.value.nameCamelCase}}{{^last}}, {{/last}}{{/incomingEventRefs}}{{/policies}}
       bindings:
         default:
           consumer:
@@ -42,8 +42,8 @@ spring:
             maxAttempts: 1
         {{/events}}{{/aggregates}}
         {{#policies}}{{#incomingEventRefs}}
-        {{nameCamelCase}}-in-0:
-          destination: {{nameCamelCase}}
+        {{this.value.nameCamelCase}}-in-0:
+          destination: {{this.value.nameCamelCase}}
           consumer:
             maxAttempts: 1
         {{/incomingEventRefs}}{{/policies}}

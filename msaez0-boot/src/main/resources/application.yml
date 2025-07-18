@@ -29,16 +29,24 @@ spring:
           consumer:
             ackMode: RECORD
       function:
-        definition: topic_channel
+        definition: {{#aggregates}}{{#events}}{{nameCamelCase}}{{/events}}{{/aggregates}}, {{#policies}}{{nameCamelCase}}{{/policies}}
       bindings:
         default:
           consumer:
             enableDlq: true
             maxAttempts: 2147483647
-        topic_channel-in-0:
-          destination: topicname
+        {{#aggregates}}{{#events}}
+        {{nameCamelCase}}-out-0:
+          destination: {{nameCamelCase}}
           consumer:
             maxAttempts: 1
+        {{/events}}{{/aggregates}}
+        {{#policies}}
+        {{nameCamelCase}}-in-0:
+          destination: {{nameCamelCase}}
+          consumer:
+            maxAttempts: 1
+        {{/policies}}
 poscoict:
   reuse:
     offset-n-skip:

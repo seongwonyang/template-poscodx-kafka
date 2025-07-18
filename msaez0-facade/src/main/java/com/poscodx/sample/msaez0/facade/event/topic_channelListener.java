@@ -22,9 +22,12 @@ import org.springframework.stereotype.Component;
  * @2025-06-25 09:50:25.681;00000;홍길동;최초생성
  * 
  */
+
+{{#policies}}
+{{#incomingEventRefs}}
 @Slf4j
-@Component("topic_channel")
-public class topic_channelListener
+@Component("{{nameCamelCase}}")
+public class {{nameCamelCase}}Listener
     implements Consumer<Message<String>>
 {
 
@@ -39,5 +42,6 @@ public class topic_channelListener
     
     // TODO 
     // private final SomeFlow someFlow; 
-
 }
+{{/incomingEventRefs}}
+{{/policies}}

@@ -23,7 +23,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+// kafka
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.function.StreamBridge;
+import org.springframework.messaging.support.MessageBuilder;
 
 /**
  * Auto generated class
@@ -42,6 +45,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/{{nameCamelCase}}-action")
 public class {{namePascalCase}}ActionResource {
     private final {{namePascalCase}}Action action;
+
+    // kafka
+    @Autowired
+    private StreamBridge streamBridge;
     
     /* 
     // TODO : Biz Logic 구현 

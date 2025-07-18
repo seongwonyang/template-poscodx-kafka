@@ -19,5 +19,6 @@ fileName: pom.xml
         <module>{{nameCamelCase}}-facade</module>
         <module>{{nameCamelCase}}-feature</module>
         <module>{{nameCamelCase}}-store</module>
+        <module>{{nameCamelCase}}-proxy</module>
     </modules>
 </project>

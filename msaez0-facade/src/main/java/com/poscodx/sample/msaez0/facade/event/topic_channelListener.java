@@ -27,19 +27,9 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component("topic_channel")
 public class topic_channelListener
-    implements Consumer<Message<String>>
+implements Consumer<Message<String>>
 {
-
-}
-
-{{#policies}}
-{{#incomingEventRefs}}
-@Slf4j
-@Component("{{this.value.nameCamelCase}}")
-public class topic_channelListener
-    implements Consumer<Message<String>>
-{
-
+    
     @PosEventHandler
     @Override
     public void accept(Message<String> message) {
@@ -49,8 +39,16 @@ public class topic_channelListener
         // someFlow.someMethod(obj)
     }
     
+    {{#policies}}
+    {{#incomingEventRefs}}
+    @Bean
+    public Consumer<Message<String>> {{this.value.nameCamelCase}}() {
+        return message -> {
+            String payload = message.getPayload();
+        };
+    }
+    {{/incomingEventRefs}}
+    {{/policies}}
     // TODO 
     // private final SomeFlow someFlow; 
 }
-{{/incomingEventRefs}}
-{{/policies}}

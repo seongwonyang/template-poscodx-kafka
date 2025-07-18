@@ -29,7 +29,7 @@ spring:
           consumer:
             ackMode: RECORD
       function:
-        definition: {{#aggregates}}{{#events}}{{nameCamelCase}}{{^last}}, {{/last}}{{/events}}{{/aggregates}}, {{#policies}}{{#incomingEventRefs}}{{this.value.nameCamelCase}}{{^last}}, {{/last}}{{/incomingEventRefs}}{{/policies}}
+        definition: {{#aggregates}}{{#events}}{{nameCamelCase}}, {{/events}}{{/aggregates}}{{#policies}}{{#incomingEventRefs}}{{this.value.nameCamelCase}}, {{/incomingEventRefs}}{{/policies}}
       bindings:
         default:
           consumer:

@@ -77,7 +77,7 @@ public class {{namePascalCase}}FlowResource {
 
         {{#outgoing 'Event' this}}
         streamBridge.send("{{nameCamelCase}}-out-0",
-                MessageBuilder.withPayload(orderJson).build());
+                MessageBuilder.withPayload({{namePascalCase}}.toJson()).build());
         {{/outgoing}}
     }
     {{/if}}

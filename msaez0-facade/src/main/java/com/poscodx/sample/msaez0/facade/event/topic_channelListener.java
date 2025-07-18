@@ -23,11 +23,20 @@ import org.springframework.stereotype.Component;
  * 
  */
 
+
+@Slf4j
+@Component("topic_channel")
+public class topic_channelListener
+    implements Consumer<Message<String>>
+{
+
+}
+
 {{#policies}}
 {{#incomingEventRefs}}
 @Slf4j
 @Component("{{this.value.nameCamelCase}}")
-public class {{this.value.nameCamelCase}}Listener
+public class topic_channelListener
     implements Consumer<Message<String>>
 {
 

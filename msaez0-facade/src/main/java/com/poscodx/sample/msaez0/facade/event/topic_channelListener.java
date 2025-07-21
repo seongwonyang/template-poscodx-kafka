@@ -1,7 +1,7 @@
 forEach: Event
-path: {{#outgoing "Policy" this}}{{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/facade/event{{/outgoing}}
-fileName: {{nameCamelCase}}Listener.java
-except: {{^outgoing "Policy" this}}{{/outgoing}}
+path: {{#outgoingRelations}}{{#target}}{{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/facade/event{{/target}}{{/outgoingRelations}}
+fileName: {{namePascalCase}}Listener.java
+except: {{#outgoingRelations}}{{#target}}{{#checkOutgoing this}}{{/target}}{{/outgoingRelations}}
 ---
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.facade.event;
 
@@ -40,3 +40,10 @@ implements Consumer<Message<String>>
         // someFlow.someMethod(obj)
     }
 }
+<function>
+    window.$HandleBars.registerHelper('checkOutgoing', function (sticker) {
+        if(sticker._type.endsWith("Policy")){
+            return false;
+        }
+    });
+</function>

@@ -1,9 +1,8 @@
-forEach: Event
-path: {{#outgoingRelations}}{{#target}}{{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/facade/event{{/target}}{{/outgoingRelations}}
-fileName: {{namePascalCase}}Listener.java
-except: {{#outgoingRelations}}{{#target}}{{#checkOutgoing this}}{{/checkOutgoing}}{{/target}}{{/outgoingRelations}}
+forEach: RelationEventInfo
+path: {{boundedContext.name}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/facade/event
+fileName: {{eventValue.namePascalCase}}.java
 ---
-package com.poscodx.sample.{{boundedContext.nameCamelCase}}.facade.event;
+package com.poscodx.sample.{{eventValue.boundedContext.nameCamelCase}}.facade.event;
 
 import java.util.function.Consumer;
 import com.poscodx.reuse.common.util.kafka.annotation.PosEventHandler;
@@ -26,24 +25,17 @@ import org.springframework.stereotype.Component;
 
 
 @Slf4j
-@Component("{{nameCamelCase}}_channel")
-public class {{nameCamelCase}}Listener
+@Component("{{eventValue.nameCamelCase}}_channel")
+public class {{eventValue.nameCamelCase}}Listener
 implements Consumer<Message<String>>
 {
     
     @PosEventHandler
     @Override
-    public void {{nameCamelCase}}(Message<String> message) {
+    public void {{eventValue.nameCamelCase}}(Message<String> message) {
         String payload = message.getPayload();
         // TODO
         // T obj = JsonUtil.fromJson(payload, T)
         // someFlow.someMethod(obj)
     }
 }
-<function>
-    window.$HandleBars.registerHelper('checkOutgoing', function (sticker) {
-        if(sticker._type.endsWith("Policy")){
-            return false;
-        }
-    });
-</function>

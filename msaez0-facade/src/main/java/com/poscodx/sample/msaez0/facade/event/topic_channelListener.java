@@ -2,7 +2,7 @@ forEach: RelationEventInfo
 path: {{boundedContext.name}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/facade/event
 fileName: {{eventValue.namePascalCase}}.java
 ---
-package com.poscodx.sample.{{eventValue.boundedContext.nameCamelCase}}.facade.event;
+package com.poscodx.sample.{{boundedContext.nameCamelCase}}.facade.event;
 
 import java.util.function.Consumer;
 import com.poscodx.reuse.common.util.kafka.annotation.PosEventHandler;

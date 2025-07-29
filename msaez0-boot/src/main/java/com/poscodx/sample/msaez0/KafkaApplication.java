@@ -1,5 +1,5 @@
 forEach: BoundedContext
-path: {{nameCamelCase}}/{{nameCamelCase}}-boot/src/main/java/com/posco/sample/{{nameCamelCase}}
+path: {{nameCamelCase}}/{{nameCamelCase}}-boot/src/main/java/com/poscodx/sample/{{nameCamelCase}}
 fileName: KafkaApplication.java
 ---
 package com.poscodx.sample.{{nameCamelCase}};

@@ -3,6 +3,7 @@ path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/sr
 fileName: {{namePascalCase}}Dto.java
 ---
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto;
+{{#fieldDescriptors}}{{^if (isPrimitive className)}}import com.poscodx.sample.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{removeList className}};{{/if}}{{/fieldDescriptors}}
 
 public class {{namePascalCase}}Dto {
     

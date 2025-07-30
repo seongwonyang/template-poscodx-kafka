@@ -4,7 +4,7 @@ fileName: {{namePascalCase}}.java
 ---
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.vo;
 
-public class {{namePascalCase}}VO {
+public class {{namePascalCase}} {
     {{#fieldDescriptors}}
     {{#isLob}}@Lob{{/isLob}}
     {{#if (isPrimitive className)}}{{#isList}}@ElementCollection{{/isList}}{{/if}}

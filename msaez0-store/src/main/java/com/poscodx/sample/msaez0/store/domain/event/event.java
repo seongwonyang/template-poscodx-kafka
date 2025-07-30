@@ -6,7 +6,7 @@ package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.event;
 
 public class {{namePascalCase}}Event {
     {{#fieldDescriptors}}
-    private {{className}} {{nameCamelCase}};
+    private {{{className}}} {{nameCamelCase}};
     {{/fieldDescriptors}}
 }
 

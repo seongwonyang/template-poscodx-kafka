@@ -3,6 +3,11 @@ path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/sr
 fileName: {{namePascalCase}}.java
 ---
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.entity;
+{{#aggregateRoot.entities.elements}}
+{{#isVO}}
+import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.vo.{{namePascalCase}};
+{{/isVO}}
+{{/aggregateRoot.entities.elements}}
 
 import java.sql.Timestamp;
 import com.poscodx.base.share.domain.PoscoEntity;

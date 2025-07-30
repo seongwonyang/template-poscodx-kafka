@@ -10,7 +10,7 @@ public class {{namePascalCase}}Dto {
     {{#isKey}}
         @Id
     {{/isKey}}
-        private {{className}} {{nameCamelCase}};
+        private {{{className}}} {{nameCamelCase}};
     {{/queryParameters}}
 
 }

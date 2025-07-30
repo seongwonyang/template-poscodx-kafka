@@ -3,6 +3,7 @@ path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/sr
 fileName: {{namePascalCase}}Jpo.java
 ---
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.postgresql.jpo;
+{{#aggregateRoot.fieldDescriptors}}{{^if (isPrimitive className)}}import com.poscodx.sample.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{removeList className}};{{/if}}{{/aggregateRoot.fieldDescriptors}}
 
 import java.sql.Timestamp;
 import java.util.List;

@@ -18,5 +18,14 @@ window.$HandleBars.registerHelper('removeList', function (className) {
     }
     return className;
 });
+
+window.$HandleBars.registerHelper('isPrimitive', function (className) {
+    if(className.includes("String") || className.includes("Integer") || className.includes("Long") || className.includes("Double") || className.includes("Float")
+            || className.includes("Boolean") || className.includes("Date") || className.includes("int")){
+        return true;
+    } else {
+        return false;
+    }
+});
 </function>
 

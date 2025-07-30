@@ -3,7 +3,7 @@ path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/sr
 fileName: {{namePascalCase}}Dto.java
 ---
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto;
-{{#fieldDescriptors}}{{^if (isPrimitive className)}}import com.poscodx.sample.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{removeList className}};{{/if}}{{/fieldDescriptors}}
+{{#queryParameters}}{{^if (isPrimitive className)}}import com.poscodx.sample.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{removeList className}};{{/if}}{{/queryParameters}}
 
 public class {{namePascalCase}}Dto {
     
@@ -24,6 +24,15 @@ window.$HandleBars.registerHelper('checkBigDecimal', function (fieldDescriptors)
         if(fieldDescriptors[i] && fieldDescriptors[i].className.includes('BigDecimal')){
             return "import java.math.BigDecimal;";
         }
+    }
+});
+
+window.$HandleBars.registerHelper('isPrimitive', function (className) {
+    if(className.includes("String") || className.includes("Integer") || className.includes("Long") || className.includes("Double") || className.includes("Float")
+            || className.includes("Boolean") || className.includes("Date") || className.includes("int")){
+        return true;
+    } else {
+        return false;
     }
 });
 </function>

@@ -3,9 +3,7 @@ path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/sr
 fileName: {{namePascalCase}}.java
 ---
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.entity;
-{{#aggregateRoot.fieldDescriptors}}
-{{^if (isPrimitive className)}}import com.poscodx.sample.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{className}};{{/if}}
-{{/aggregateRoot.fieldDescriptors}}
+{{#aggregateRoot.fieldDescriptors}}{{^if (isPrimitive className)}}import com.poscodx.sample.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{removeList className}};{{/if}}{{/aggregateRoot.fieldDescriptors}}
 
 import java.sql.Timestamp;
 import com.poscodx.base.share.domain.PoscoEntity;
@@ -131,5 +129,12 @@ window.$HandleBars.registerHelper('checkEntityField', function (type, name, isVO
     }else{
         return "private" + " " + type + " " + name + ";";
     }
+});
+
+window.$HandleBars.registerHelper('removeList', function (className) {
+    if(className.includes("List<")) {
+        className = className.replace("List<", "").replace(">", "");
+    }
+    return className;
 });
 </function>

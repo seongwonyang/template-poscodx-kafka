@@ -2,7 +2,7 @@ forEach: BoundedContext
 path: {{nameCamelCase}}/{{nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{nameCamelCase}}/facade/event
 fileName: TimeEventListener.java
 ---
-package com.poscodx.sample.{nameCamelCase}.facade.event;
+package com.poscodx.sample.{{nameCamelCase}}.facade.event;
 
 import java.util.function.Consumer;
 import com.poscodx.reuse.common.util.kafka.annotation.PosEventHandler;

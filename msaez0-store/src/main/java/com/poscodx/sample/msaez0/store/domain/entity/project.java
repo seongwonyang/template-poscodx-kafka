@@ -7,9 +7,15 @@ package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.entity;
 
 import java.sql.Timestamp;
 import com.poscodx.base.share.domain.PoscoEntity;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.util.List;
+import jakarta.persistence.Id;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Enumerated;
 
 
 /**

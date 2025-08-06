@@ -4,10 +4,12 @@ fileName: {{namePascalCase}}.java
 ---
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.vo;
 
+import java.util.List;
+
 public class {{namePascalCase}} {
     {{#fieldDescriptors}}
     {{#isLob}}@Lob{{/isLob}}
-    {{#if (isPrimitive className)}}{{#isList}}@ElementCollection{{/isList}}{{/if}}
+    {{#if (isPrimitive className)}}{{#isList}}{{/isList}}{{/if}}
     {{#checkRelations ../relations className isVO}} {{/checkRelations}}
     {{#checkClassType ../fieldDescriptors}}{{/checkClassType}}
     private {{{className}}} {{nameCamelCase}};

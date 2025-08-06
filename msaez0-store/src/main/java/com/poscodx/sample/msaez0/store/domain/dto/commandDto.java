@@ -7,6 +7,7 @@ package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto;
 
 import java.util.List;
 
+// Command DTO
 public class {{namePascalCase}}Dto {
     {{#fieldDescriptors}}
     private {{{className}}} {{nameCamelCase}};

@@ -7,6 +7,7 @@ package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto;
 
 import java.util.List;
 
+// View DTO
 public class {{namePascalCase}}Dto {
     
     {{#queryParameters}}

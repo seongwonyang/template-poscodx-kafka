@@ -1,5 +1,5 @@
 forEach: RelationEventInfo
-path: {{boundedContext.name}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/facade/event
+path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/facade/event
 fileName: {{eventValue.namePascalCase}}.java
 ---
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.facade.event;
@@ -39,3 +39,4 @@ implements Consumer<Message<String>>
         // someFlow.someMethod(obj)
     }
 }
+

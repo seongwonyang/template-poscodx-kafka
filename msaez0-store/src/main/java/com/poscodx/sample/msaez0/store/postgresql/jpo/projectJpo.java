@@ -45,7 +45,6 @@ public class {{namePascalCase}}Jpo
     {{^isVO}}
     {{#isKey}}
     @Id
-    @Column(name = "{{nameCamelCase}}")
     {{#checkClassType ../aggregateRoot.fieldDescriptors}}{{/checkClassType}}
     {{/isKey}}
     {{/isVO}}

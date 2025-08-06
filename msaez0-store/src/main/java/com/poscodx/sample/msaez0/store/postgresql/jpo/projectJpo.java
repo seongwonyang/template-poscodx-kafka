@@ -49,6 +49,7 @@ public class {{namePascalCase}}Jpo
     {{#checkClassType ../aggregateRoot.fieldDescriptors}}{{/checkClassType}}
     {{/isKey}}
     {{/isVO}}
+    @Column(name = "{{nameCamelCase}}")
     {{#isLob}}@Lob{{/isLob}}
     {{#if (isPrimitive className)}}{{#isList}}{{/isList}}{{/if}}
     {{#checkFieldType className isVO namePascalCase isKey ../aggregateRoot.entities.relations}}{{/checkFieldType}}

@@ -40,7 +40,8 @@ window.$HandleBars.registerHelper('checkCompositeKey', function (incomingClassRe
 window.$HandleBars.registerHelper('checkClassType', function (fieldDescriptors) {
     for(var i = 0; i < fieldDescriptors.length; i++) {
         if(fieldDescriptors[i].isKey && fieldDescriptors[i].className === 'Long'){
-            return "@GeneratedValue(strategy=GenerationType.AUTO)";
+            // return "@GeneratedValue(strategy=GenerationType.AUTO)";
+            return "";
         }
     }
     return;

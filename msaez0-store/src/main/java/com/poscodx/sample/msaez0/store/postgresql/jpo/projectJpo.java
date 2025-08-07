@@ -81,7 +81,8 @@ public class {{namePascalCase}}Jpo
 window.$HandleBars.registerHelper('checkClassType', function (fieldDescriptors) {
     for(var i = 0; i < fieldDescriptors.length; i ++ ){
         if(fieldDescriptors[i] && fieldDescriptors[i].className == 'Long'){
-            return "@GeneratedValue(strategy=GenerationType.AUTO)";
+            // return "@GeneratedValue(strategy=GenerationType.AUTO)";
+            return "";
         }
     }
     return "";

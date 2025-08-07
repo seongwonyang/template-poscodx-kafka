@@ -6,6 +6,10 @@ package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto;
 {{#queryParameters}}{{^if (isPrimitive className)}}import com.poscodx.sample.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{removeList className}};{{/if}}{{/queryParameters}}
 
 import java.util.List;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Lob;
+import java.util.Date;
 
 // View DTO
 public class {{namePascalCase}}Dto {

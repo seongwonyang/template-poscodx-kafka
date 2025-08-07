@@ -5,6 +5,10 @@ fileName: {{namePascalCase}}.java
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.vo;
 
 import java.util.List;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Lob;
+import java.util.Date;
 
 public class {{namePascalCase}} {
     {{#fieldDescriptors}}

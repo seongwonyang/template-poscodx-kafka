@@ -5,6 +5,13 @@ fileName: {{namePascalCase}}Event.java
 package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.event;
 {{#fieldDescriptors}}{{^if (isPrimitive className)}}import com.poscodx.sample.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{removeList className}};{{/if}}{{/fieldDescriptors}}
 
+import java.util.List;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Lob;
+import java.util.Date;
+
+// Event
 public class {{namePascalCase}}Event {
     {{#fieldDescriptors}}
     private {{{className}}} {{nameCamelCase}};

@@ -10,6 +10,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Lob;
 import java.util.Date;
+import jakarta.persistence.Id;
 
 // View DTO
 public class {{namePascalCase}}Dto {

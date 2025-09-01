@@ -1,4 +1,4 @@
 forEach: BoundedContext
-path: {{nameCamelCase}}/{{nameCamelCase}}-feature/src/main/java/com/poscodx/sample/{{nameCamelCase}}/feature/domain
+path: {{nameCamelCase}}/{{nameCamelCase}}-feature/src/main/java/com/poscodx/{{options.serviceId}}/{{nameCamelCase}}/feature/domain
 fileName: .gitkeep
 ---

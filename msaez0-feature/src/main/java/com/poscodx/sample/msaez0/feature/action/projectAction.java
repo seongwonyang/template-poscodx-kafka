@@ -1,16 +1,16 @@
 forEach: Aggregate
-path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-feature/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/feature/action
+path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-feature/src/main/java/com/poscodx/{{options.serviceId}}/{{boundedContext.nameCamelCase}}/feature/action
 fileName: {{namePascalCase}}Action.java
 ---
-package com.poscodx.sample.{{boundedContext.nameCamelCase}}.feature.action;
+package com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.feature.action;
 
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.logic.{{namePascalCase}}Logic;
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.logic.{{namePascalCase}}Logic;
 {{#commands}}
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
 {{/commands}}
 {{#attached 'View' this}}
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
 {{/attached}}
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

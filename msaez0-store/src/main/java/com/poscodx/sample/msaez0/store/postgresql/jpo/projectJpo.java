@@ -1,9 +1,9 @@
 forEach: Aggregate
-path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/store/postgresql/jpo
+path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/src/main/java/com/poscodx/{{options.serviceId}}/{{boundedContext.nameCamelCase}}/store/postgresql/jpo
 fileName: {{namePascalCase}}Jpo.java
 ---
-package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.postgresql.jpo;
-{{#aggregateRoot.fieldDescriptors}}{{^if (isPrimitive className)}}import com.poscodx.sample.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{removeList className}};{{/if}}{{/aggregateRoot.fieldDescriptors}}
+package com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.postgresql.jpo;
+{{#aggregateRoot.fieldDescriptors}}{{^if (isPrimitive className)}}import com.poscodx.{{options.serviceId}}.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{removeList className}};{{/if}}{{/aggregateRoot.fieldDescriptors}}
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 import com.poscodx.base.share.exception.PoscoException;
 import com.poscodx.base.share.jpo.PoscoEntityJpo;
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

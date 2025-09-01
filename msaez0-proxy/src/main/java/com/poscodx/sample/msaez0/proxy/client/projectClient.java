@@ -1,5 +1,5 @@
 forEach: BoundedContext
-path: {{nameCamelCase}}/{{nameCamelCase}}-proxy/src/main/java/com/poscodx/sample/{{nameCamelCase}}/proxy/client
+path: {{nameCamelCase}}/{{nameCamelCase}}-proxy/src/main/java/com/poscodx/{{options.serviceId}}/{{nameCamelCase}}/proxy/client
 fileName: {{nameCamelCase}}Client.java
 ---
 

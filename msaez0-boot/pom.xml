@@ -11,12 +11,12 @@ fileName: pom.xml
         <version>21.0.0-SNAPSHOT</version>
         <relativePath></relativePath>
     </parent>
-    <groupId>com.poscodx.sample.{{nameCamelCase}}</groupId>
+    <groupId>com.poscodx.{{options.serviceId}}.{{nameCamelCase}}</groupId>
     <artifactId>{{nameCamelCase}}-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <dependencies>
         <dependency>
-            <groupId>com.poscodx.sample.{{nameCamelCase}}</groupId>
+            <groupId>com.poscodx.{{options.serviceId}}.{{nameCamelCase}}</groupId>
             <artifactId>{{nameCamelCase}}-facade</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

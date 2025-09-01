@@ -1,15 +1,15 @@
 forEach: Aggregate
-path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/store/postgresql
+path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/src/main/java/com/poscodx/{{options.serviceId}}/{{boundedContext.nameCamelCase}}/store/postgresql
 fileName: {{namePascalCase}}PostgresqlStore.java
 ---
-package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.postgresql;
+package com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.postgresql;
 
 import java.util.List;
 import java.util.Optional;
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.postgresql.jpo.{{namePascalCase}}Jpo;
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.postgresql.repository.{{namePascalCase}}PostgresqlRepository;
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.{{namePascalCase}}Store;
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.postgresql.jpo.{{namePascalCase}}Jpo;
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.postgresql.repository.{{namePascalCase}}PostgresqlRepository;
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.{{namePascalCase}}Store;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;

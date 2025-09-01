@@ -1,19 +1,19 @@
 forEach: Aggregate
-path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/facade/rest/feature
+path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-facade/src/main/java/com/poscodx/{{options.serviceId}}/{{boundedContext.nameCamelCase}}/facade/rest/feature
 fileName: {{namePascalCase}}ActionResource.java
 ---
-package com.poscodx.sample.{{boundedContext.nameCamelCase}}.facade.rest.feature;
+package com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.facade.rest.feature;
 
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.feature.action.{{namePascalCase}}Action;
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.feature.action.{{namePascalCase}}Action;
 {{#commands}}
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
 {{/commands}}
 {{#attached 'View' this}}
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
 {{/attached}}
 {{#events}}
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.event.{{namePascalCase}}Event;
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.event.{{namePascalCase}}Event;
 {{/events}}
 
 

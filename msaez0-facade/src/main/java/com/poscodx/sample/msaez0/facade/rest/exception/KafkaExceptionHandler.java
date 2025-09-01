@@ -1,8 +1,8 @@
 forEach: BoundedContext
-path: {{nameCamelCase}}/{{nameCamelCase}}-facade/src/main/java/com/poscodx/sample/{{nameCamelCase}}/facade/rest/exception
+path: {{nameCamelCase}}/{{nameCamelCase}}-facade/src/main/java/com/poscodx/{{options.serviceId}}/{{nameCamelCase}}/facade/rest/exception
 fileName: KafkaExceptionHandler.java
 ---
-package com.poscodx.sample.{{nameCamelCase}}.facade.rest.exception;
+package com.poscodx.{{options.serviceId}}.{{nameCamelCase}}.facade.rest.exception;
 
 import com.poscodx.base.share.domain.errorobjects.PosBaseException;
 import lombok.extern.slf4j.Slf4j;

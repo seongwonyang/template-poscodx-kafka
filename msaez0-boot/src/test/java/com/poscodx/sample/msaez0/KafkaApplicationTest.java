@@ -1,8 +1,8 @@
 forEach: BoundedContext
-path: {{nameCamelCase}}/{{nameCamelCase}}-boot/src/test/java/com/poscodx/sample/{{nameCamelCase}}
+path: {{nameCamelCase}}/{{nameCamelCase}}-boot/src/test/java/com/poscodx/{{options.serviceId}}/{{nameCamelCase}}
 fileName: KafkaApplicationTest.java
 ---
-package com.poscodx.sample.{nameCamelCase};
+package com.poscodx.{{options.serviceId}}.{nameCamelCase};
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,8 +1,8 @@
 forEach: ValueObject
-path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/store/domain/vo
+path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/src/main/java/com/poscodx/{{options.serviceId}}/{{boundedContext.nameCamelCase}}/store/domain/vo
 fileName: {{namePascalCase}}.java
 ---
-package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.vo;
+package com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.vo;
 
 import java.util.List;
 import jakarta.persistence.Enumerated;

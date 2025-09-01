@@ -1,14 +1,14 @@
 forEach: Aggregate
-path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/src/test/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/store
+path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/src/test/java/com/poscodx/{{options.serviceId}}/{{boundedContext.nameCamelCase}}/store
 fileName: {{namePascalCase}}StoreTest.java
 ---
-package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store;
+package com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store;
 
 import java.util.List;
 import com.poscodx.base.share.util.json.JsonUtil;
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.postgresql.{{namePascalCase}}PostgresqlStore;
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.{{namePascalCase}}Store;
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.postgresql.{{namePascalCase}}PostgresqlStore;
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.{{namePascalCase}}Store;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

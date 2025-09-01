@@ -1,9 +1,9 @@
 forEach: Aggregate
-path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/store/domain/entity
+path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/src/main/java/com/poscodx/{{options.serviceId}}/{{boundedContext.nameCamelCase}}/store/domain/entity
 fileName: {{namePascalCase}}.java
 ---
-package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.entity;
-{{#aggregateRoot.fieldDescriptors}}{{^if (isPrimitive className)}}import com.poscodx.sample.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{removeList className}};{{/if}}{{/aggregateRoot.fieldDescriptors}}
+package com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.entity;
+{{#aggregateRoot.fieldDescriptors}}{{^if (isPrimitive className)}}import com.poscodx.{{options.serviceId}}.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{removeList className}};{{/if}}{{/aggregateRoot.fieldDescriptors}}
 
 import java.sql.Timestamp;
 import com.poscodx.base.share.domain.PoscoEntity;

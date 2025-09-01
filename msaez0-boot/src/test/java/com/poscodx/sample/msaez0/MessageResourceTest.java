@@ -1,8 +1,8 @@
 forEach: BoundedContext
-path: {{nameCamelCase}}/{{nameCamelCase}}-boot/src/test/java/com/poscodx/sample/{{nameCamelCase}}
+path: {{nameCamelCase}}/{{nameCamelCase}}-boot/src/test/java/com/poscodx/{{options.serviceId}}/{{nameCamelCase}}
 fileName: MessageResourceTest.java
 ---
-package com.poscodx.sample.{nameCamelCase};
+package com.poscodx.{{options.serviceId}}.{nameCamelCase};
 
 import java.util.Locale;
 import org.junit.jupiter.api.Test;

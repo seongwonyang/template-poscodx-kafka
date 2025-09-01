@@ -1,4 +1,4 @@
 forEach: BoundedContext
-path: {{nameCamelCase}}/{{nameCamelCase}}-store/src/main/java/com/poscodx/sample/{{nameCamelCase}}/store/postgresql/repository
+path: {{nameCamelCase}}/{{nameCamelCase}}-store/src/main/java/com/poscodx/{{options.serviceId}}/{{nameCamelCase}}/store/postgresql/repository
 fileName: .gitkeep
 ---

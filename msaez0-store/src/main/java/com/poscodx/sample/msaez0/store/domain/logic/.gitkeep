@@ -1,5 +1,5 @@
 forEach: BoundedContext
-path: {{nameCamelCase}}/{{nameCamelCase}}-store/src/main/java/com/poscodx/sample/{{nameCamelCase}}/store/domain/logic
+path: {{nameCamelCase}}/{{nameCamelCase}}-store/src/main/java/com/poscodx/{{options.serviceId}}/{{nameCamelCase}}/store/domain/logic
 fileName: .gitkeep
 ---
 

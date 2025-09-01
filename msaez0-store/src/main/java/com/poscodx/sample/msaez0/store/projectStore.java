@@ -1,11 +1,11 @@
 forEach: Aggregate
-path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/store
+path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/src/main/java/com/poscodx/{{options.serviceId}}/{{boundedContext.nameCamelCase}}/store
 fileName: {{namePascalCase}}Store.java
 ---
-package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store;
+package com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store;
 
 import java.util.List;
-import com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
+import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
 
 
 /**

@@ -1,9 +1,9 @@
 forEach: View
-path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/src/main/java/com/poscodx/sample/{{boundedContext.nameCamelCase}}/store/domain/dto
+path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/src/main/java/com/poscodx/{{options.serviceId}}/{{boundedContext.nameCamelCase}}/store/domain/dto
 fileName: {{namePascalCase}}Dto.java
 ---
-package com.poscodx.sample.{{boundedContext.nameCamelCase}}.store.domain.dto;
-{{#queryParameters}}{{^if (isPrimitive className)}}import com.poscodx.sample.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{removeList className}};{{/if}}{{/queryParameters}}
+package com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.dto;
+{{#queryParameters}}{{^if (isPrimitive className)}}import com.poscodx.{{options.serviceId}}.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{removeList className}};{{/if}}{{/queryParameters}}
 
 import java.util.List;
 import jakarta.persistence.Enumerated;

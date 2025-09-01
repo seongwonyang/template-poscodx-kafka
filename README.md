@@ -9,6 +9,6 @@ generated at 2025-06-25
 
 ```
   프로젝트 ID : {{nameCamelCase}}
-  프로젝트 명 : kafka
+  프로젝트 명 : {{options.serviceId}}(kafka)
   Java 패키지 : com.poscodx.{{options.serviceId}}.{{nameCamelCase}}
 ```

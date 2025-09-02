@@ -4,6 +4,23 @@ fileName: {{namePascalCase}}ActionResource.java
 ---
 package com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.facade.rest.feature;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GETMapping;
+import org.springframework.web.bind.annotation.PUTMapping;
+import org.springframework.web.bind.annotation.DELETEMapping;
+import org.springframework.web.bind.annotation.POSTMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+// kafka
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.function.StreamBridge;
+import org.springframework.messaging.support.MessageBuilder;
+
 import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
 import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.feature.action.{{namePascalCase}}Action;
 {{#commands}}
@@ -15,21 +32,6 @@ import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.
 {{#events}}
 import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.event.{{namePascalCase}}Event;
 {{/events}}
-
-
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-// kafka
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.stream.function.StreamBridge;
-import org.springframework.messaging.support.MessageBuilder;
 
 /**
  * Auto generated class
@@ -45,7 +47,7 @@ import org.springframework.messaging.support.MessageBuilder;
 @Slf4j
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(path = "/{{nameCamelCase}}-action")
+@RequestMapping(path = "/{{getRequsetMapping namePascalCase}}")
 public class {{namePascalCase}}ActionResource {
     private final {{namePascalCase}}Action action;
 
@@ -57,7 +59,7 @@ public class {{namePascalCase}}ActionResource {
     {{#commands}}
     {{#if isRestRepository}}
     {{else}}
-    @GetMapping("/{{nameCamelCase}}")
+    @{{controllerInfo.method}}Mapping("/{{nameCamelCase}}")
     public void {{nameCamelCase}}(@RequestBody {{namePascalCase}}Dto {{nameCamelCase}}Dto) {
         action.someMethod();
 
@@ -78,3 +80,13 @@ public class {{namePascalCase}}ActionResource {
     {{/attached}}
 
 }
+
+<function>
+window.$HandleBars.registerHelper('getRequsetMapping', function (namePascalCase) {
+    // 단어가 하나면 그대로 반환, camelCase면 kebab-case로 변환
+    if (typeof namePascalCase !== 'string') return namePascalCase;
+    // camelCase 경계(소문자/숫자 다음 대문자)가 없으면 그대로 반환
+    if (!/[a-z0-9][A-Z]/.test(namePascalCase)) return namePascalCase;
+    return namePascalCase.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+});
+</function>

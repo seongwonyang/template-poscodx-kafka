@@ -3,14 +3,14 @@ path: {{boundedContext.nameCamelCase}}/{{boundedContext.nameCamelCase}}-store/sr
 fileName: {{namePascalCase}}Dto.java
 ---
 package com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.dto;
-{{#queryParameters}}{{^if (isPrimitive className)}}import com.poscodx.{{options.serviceId}}.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{removeList className}};{{/if}}{{/queryParameters}}
 
 import java.util.List;
+import java.util.Date;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Lob;
-import java.util.Date;
 import jakarta.persistence.Id;
+{{#queryParameters}}{{^if (isPrimitive className)}}import com.poscodx.{{options.serviceId}}.{{../boundedContext.nameCamelCase}}.store.domain.vo.{{removeList className}};{{/if}}{{/queryParameters}}
 
 /**
  * Auto generated class

@@ -5,10 +5,10 @@ fileName: {{eventValue.namePascalCase}}.java
 package com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.facade.event;
 
 import java.util.function.Consumer;
-import com.poscodx.reuse.common.util.kafka.annotation.PosEventHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.Message;
 import org.springframework.stereotype.Component;
+import com.poscodx.reuse.common.util.kafka.annotation.PosEventHandler;
 
 
 /**

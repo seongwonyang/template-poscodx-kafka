@@ -4,6 +4,12 @@ fileName: {{namePascalCase}}Action.java
 ---
 package com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.feature.action;
 
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.MessageSource;
+import org.springframework.stereotype.Service;
+
 import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.entity.{{namePascalCase}};
 import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.logic.{{namePascalCase}}Logic;
 {{#commands}}
@@ -12,11 +18,6 @@ import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.
 {{#attached 'View' this}}
 import com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.dto.{{namePascalCase}}Dto;
 {{/attached}}
-import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.MessageSource;
-import org.springframework.stereotype.Service;
 
 
 /**

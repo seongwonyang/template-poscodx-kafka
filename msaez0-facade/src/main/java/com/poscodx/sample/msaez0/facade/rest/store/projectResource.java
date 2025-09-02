@@ -35,7 +35,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @CrossOrigin("*")
 @RestController
-@RequestMapping(path = "/{{nameCamelCase}}")
+@RequestMapping(path = "/{{getRequsetMapping namePascalCase}}")
 public class {{namePascalCase}}Resource {
     private final {{namePascalCase}}Logic logic;
 
@@ -64,3 +64,13 @@ public class {{namePascalCase}}Resource {
         this.logic.remove(id);
     }
 }
+
+<function>
+window.$HandleBars.registerHelper('getRequsetMapping', function (namePascalCase) {
+    // 단어가 하나면 그대로 반환, camelCase면 kebab-case로 변환
+    if (typeof namePascalCase !== 'string') return namePascalCase;
+    // camelCase 경계(소문자/숫자 다음 대문자)가 없으면 그대로 반환
+    if (!/[a-z0-9][A-Z]/.test(namePascalCase)) return namePascalCase;
+    return namePascalCase.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+});
+</function>

@@ -5,10 +5,10 @@ fileName: {{namePascalCase}}.java
 package com.poscodx.{{options.serviceId}}.{{boundedContext.nameCamelCase}}.store.domain.vo;
 
 import java.util.List;
+import java.util.Date;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Lob;
-import java.util.Date;
 
 /**
  * Auto generated class

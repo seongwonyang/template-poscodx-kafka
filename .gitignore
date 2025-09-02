@@ -16,3 +16,5 @@ fileName: .gitignore
 *.iml
 target/
 *-boot/src/main/resources/application*.yml
+
+_DS_Store

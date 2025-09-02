@@ -61,7 +61,7 @@ public class {{namePascalCase}}ActionResource {
     {{else}}
     @{{controllerInfo.method}}Mapping("/{{nameCamelCase}}")
     public void {{nameCamelCase}}(@RequestBody {{namePascalCase}}Dto {{nameCamelCase}}Dto) {
-        action.someMethod();
+        // action.someMethod();
 
         {{#outgoing 'Event' this}}
         streamBridge.send("{{nameCamelCase}}-out-0",
@@ -75,7 +75,7 @@ public class {{namePascalCase}}ActionResource {
     {{#attached 'View' this}}
     @GetMapping("/{{nameCamelCase}}")
     public {{../namePascalCase}} {{nameCamelCase}}(@RequestBody {{namePascalCase}}Dto {{nameCamelCase}}Dto) {
-        action.someMethod();
+        // action.someMethod();
     }
     {{/attached}}
 

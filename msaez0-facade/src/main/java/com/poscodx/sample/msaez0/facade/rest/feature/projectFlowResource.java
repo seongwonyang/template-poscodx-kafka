@@ -53,7 +53,7 @@ public class {{namePascalCase}}FlowResource {
     {{else}}
     @GetMapping("/{{nameCamelCase}}")
     public void {{nameCamelCase}}(@RequestBody {{namePascalCase}}Dto {{nameCamelCase}}Dto) {
-        flow.someMethod();
+        // flow.someMethod();
 
         {{#outgoing 'Event' this}}
         streamBridge.send("{{nameCamelCase}}-out-0",
@@ -67,7 +67,7 @@ public class {{namePascalCase}}FlowResource {
     {{#attached 'View' this}}
     @GetMapping("/{{nameCamelCase}}")
     public {{../namePascalCase}} {{nameCamelCase}}(@RequestBody {{namePascalCase}}Dto {{nameCamelCase}}Dto) {
-        flow.someMethod();
+        // flow.someMethod();
     }
     {{/attached}}
 
